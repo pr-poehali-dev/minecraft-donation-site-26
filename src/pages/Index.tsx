@@ -13,9 +13,9 @@ const donates = [
   { name: 'Фермер', price: 150, description: 'Специальная мотыга и сфера и кит', color: 'from-blue-600 to-blue-700' },
   { name: 'Солдат', price: 200, description: 'Уникальная зелька и уникальный талисман и кит', color: 'from-blue-500 to-blue-600' },
   { name: 'Шахтер', price: 300, description: 'Уникальные зельки и талисманом и киркой и китом', color: 'from-purple-600 to-purple-700' },
-  { name: 'Король', price: 350, description: 'Уникальна зелька и уникальный талисман и 2 короны и кит', color: 'from-yellow-500 to-yellow-600' },
+  { name: 'Король', price: 350, description: 'Уникальная зелька и уникальный талисман и 2 короны и кит', color: 'from-yellow-500 to-yellow-600' },
   { name: 'Повелитель', price: 410, description: 'Уникальный талисман и кирка шахтера и зелька короля и кит', color: 'from-red-600 to-red-700' },
-  { name: 'Бог', price: 589, description: 'Зелька короля и талисман шахтера и сфера фермера и уникальным талисманом бога и самый крутой кит также королевский стиль', color: 'from-yellow-400 to-amber-500' }
+  { name: 'Бог', price: 589, description: 'Зелька короля и талисман шахтера и сфера фермера и уникальным талисманом бога и самый крутой кит', color: 'from-yellow-400 to-amber-500' }
 ];
 
 const chatRules = [

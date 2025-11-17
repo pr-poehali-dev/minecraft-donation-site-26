@@ -39,12 +39,27 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState('donates');
   const { toast } = useToast();
 
-  const copyIP = () => {
-    navigator.clipboard.writeText('TheMiddleAgesCraft.aternos.me:58588');
-    toast({
-      title: 'IP скопирован!',
-      description: 'Адрес сервера скопирован в буфер обмена',
-    });
+  const copyIP = async () => {
+    try {
+      await navigator.clipboard.writeText('TheMiddleAgesCraft.aternos.me:58588');
+      toast({
+        title: 'IP скопирован!',
+        description: 'Адрес сервера скопирован в буфер обмена',
+      });
+    } catch (err) {
+      const textArea = document.createElement('textarea');
+      textArea.value = 'TheMiddleAgesCraft.aternos.me:58588';
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      toast({
+        title: 'IP скопирован!',
+        description: 'Адрес сервера скопирован в буфер обмена',
+      });
+    }
   };
 
   return (

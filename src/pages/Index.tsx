@@ -4,6 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 const donates = [
   { name: 'Рыцарь', price: 20, description: 'Есть уникальная зелька и кит', color: 'from-gray-600 to-gray-700' },
@@ -38,6 +41,57 @@ const gameRules = [
 const Index = () => {
   const [activeSection, setActiveSection] = useState('donates');
   const { toast } = useToast();
+  const [selectedDonate, setSelectedDonate] = useState<typeof donates[0] | null>(null);
+  const [nickname, setNickname] = useState('');
+  const [promoCode, setPromoCode] = useState('');
+  const [finalPrice, setFinalPrice] = useState(0);
+
+  const applyPromoCode = (price: number, promo: string) => {
+    if (promo.toUpperCase() === 'F15') {
+      return Math.round(price * 0.95);
+    }
+    return price;
+  };
+
+  const handleBuyClick = (donate: typeof donates[0]) => {
+    setSelectedDonate(donate);
+    setNickname('');
+    setPromoCode('');
+    setFinalPrice(donate.price);
+  };
+
+  const handlePromoChange = (value: string) => {
+    setPromoCode(value);
+    if (selectedDonate) {
+      setFinalPrice(applyPromoCode(selectedDonate.price, value));
+    }
+  };
+
+  const handlePurchase = () => {
+    if (!nickname.trim()) {
+      toast({
+        title: 'Ошибка',
+        description: 'Пожалуйста, введите ваш игровой ник',
+        variant: 'destructive'
+      });
+      return;
+    }
+
+    toast({
+      title: 'Данные для оплаты',
+      description: (
+        <div className="space-y-2 mt-2">
+          <p className="font-bold">Переведите {finalPrice}₽ на карту:</p>
+          <p className="font-mono text-sm">2202 2067 5020 2207</p>
+          <p className="text-sm">Код CVV: 363</p>
+          <p className="text-sm mt-2">После оплаты напишите администратору с подтверждением и ником: <span className="font-bold">{nickname}</span></p>
+        </div>
+      ),
+      duration: 10000
+    });
+
+    setSelectedDonate(null);
+  };
 
   const copyIP = async () => {
     try {
@@ -148,7 +202,10 @@ const Index = () => {
                       </Badge>
                     </div>
                     <p className="text-gray-100 mb-6">{donate.description}</p>
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold">
+                    <Button 
+                      onClick={() => handleBuyClick(donate)}
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+                    >
                       Купить
                     </Button>
                   </div>
@@ -246,6 +303,74 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      <Dialog open={!!selectedDonate} onOpenChange={() => setSelectedDonate(null)}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">Оформление покупки</DialogTitle>
+            <DialogDescription>
+              Привилегия: <span className="font-bold text-primary">{selectedDonate?.name}</span> за {selectedDonate?.price}₽
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="space-y-4 py-4">
+            <div className="space-y-2">
+              <Label htmlFor="nickname">Игровой ник</Label>
+              <Input
+                id="nickname"
+                placeholder="Введите ваш ник в игре"
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="promo">Промокод (необязательно)</Label>
+              <Input
+                id="promo"
+                placeholder="F15 для скидки 5%"
+                value={promoCode}
+                onChange={(e) => handlePromoChange(e.target.value)}
+              />
+              {promoCode.toUpperCase() === 'F15' && (
+                <p className="text-sm text-green-600 font-medium">✓ Промокод применен! Скидка 5%</p>
+              )}
+            </div>
+
+            <div className="bg-muted/50 p-4 rounded-lg border border-border">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-sm text-muted-foreground">Изначальная цена:</span>
+                <span className="font-medium">{selectedDonate?.price}₽</span>
+              </div>
+              {promoCode.toUpperCase() === 'F15' && (
+                <div className="flex justify-between items-center mb-3 text-green-600">
+                  <span className="text-sm">Скидка 5%:</span>
+                  <span className="font-medium">-{selectedDonate ? selectedDonate.price - finalPrice : 0}₽</span>
+                </div>
+              )}
+              <div className="flex justify-between items-center text-lg font-bold border-t border-border pt-3">
+                <span>К оплате:</span>
+                <span className="text-primary">{finalPrice}₽</span>
+              </div>
+            </div>
+
+            <div className="bg-primary/10 border border-primary/30 p-4 rounded-lg space-y-2">
+              <p className="font-semibold text-sm">Данные для перевода:</p>
+              <p className="font-mono text-sm">Карта: 2202 2067 5020 2207</p>
+              <p className="font-mono text-sm">CVV: 363</p>
+            </div>
+          </div>
+
+          <div className="flex gap-2">
+            <Button onClick={() => setSelectedDonate(null)} variant="outline" className="flex-1">
+              Отмена
+            </Button>
+            <Button onClick={handlePurchase} className="flex-1">
+              Оплатить {finalPrice}₽
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -77,17 +77,15 @@ const Index = () => {
       return;
     }
 
+    const message = `Здравствуйте! Оплатил донат "${selectedDonate?.name}" за ${finalPrice}₽. Мой ник: ${nickname}`;
+    const telegramUrl = `https://t.me/Fermer_tm?text=${encodeURIComponent(message)}`;
+    
+    window.open(telegramUrl, '_blank');
+
     toast({
-      title: 'Данные для оплаты',
-      description: (
-        <div className="space-y-2 mt-2">
-          <p className="font-bold">Переведите {finalPrice}₽ на карту:</p>
-          <p className="font-mono text-sm">2202 2067 5020 2207</p>
-          <p className="text-sm">Код CVV: 363</p>
-          <p className="text-sm mt-2">После оплаты напишите администратору с подтверждением и ником: <span className="font-bold">{nickname}</span></p>
-        </div>
-      ),
-      duration: 10000
+      title: 'Переход к оплате',
+      description: 'Переведите деньги на карту и отправьте подтверждение администратору в Telegram',
+      duration: 5000
     });
 
     setSelectedDonate(null);

@@ -355,7 +355,7 @@ const Index = () => {
             <div className="bg-primary/10 border border-primary/30 p-4 rounded-lg space-y-2">
               <p className="font-semibold text-sm">Данные для перевода:</p>
               <p className="font-mono text-sm">Карта: 2202 2067 5020 2207</p>
-              <p className="font-mono text-sm">CVV: 363</p>
+              <p className="font-mono text-sm"></p>
             </div>
           </div>
 

@@ -251,7 +251,7 @@ const Index = () => {
                       <Badge variant="outline" className="shrink-0 h-fit">{rule.id}</Badge>
                       <div>
                         <p className="font-medium text-foreground mb-1">{rule.text}</p>
-                        <p className="text-sm text-destructive">{rule.punishment}</p>
+                        <p className="text-sm text-destructive text-center">{rule.punishment}</p>
                       </div>
                     </div>
                   ))}

@@ -288,7 +288,7 @@ const Index = () => {
                 <Badge className="text-lg bg-primary/20 text-primary border-2 border-primary">
                   Главный Администратор
                 </Badge>
-                <p className="text-gray-100 mt-4">Создатель китов</p>
+                <p className="text-gray-100 mt-4"></p>
               </Card>
             </div>
           </div>

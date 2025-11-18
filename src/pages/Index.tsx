@@ -199,7 +199,7 @@ const Index = () => {
                         {donate.price}₽
                       </Badge>
                     </div>
-                    <p className="text-gray-100 mb-6">{donate.description}</p>
+                    <p className="mb-6 font-bold text-sm text-[#ffe600]">{donate.description}</p>
                     <Button 
                       onClick={() => handleBuyClick(donate)}
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold"

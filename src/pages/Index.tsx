@@ -170,10 +170,7 @@ const Index = () => {
               variant={activeSection === 'admin' ? 'default' : 'ghost'}
               onClick={() => setActiveSection('admin')}
               className="gap-2"
-            >
-              <Icon name="Shield" size={18} />
-              Администрация
-            </Button>
+            >Боги</Button>
           </div>
         </div>
       </nav>

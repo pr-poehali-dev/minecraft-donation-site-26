@@ -162,10 +162,7 @@ const Index = () => {
               variant={activeSection === 'rules' ? 'default' : 'ghost'}
               onClick={() => setActiveSection('rules')}
               className="gap-2"
-            >
-              <Icon name="ScrollText" size={18} />
-              Правила
-            </Button>
+            >Правила сервера</Button>
             <Button
               variant={activeSection === 'admin' ? 'default' : 'ghost'}
               onClick={() => setActiveSection('admin')}

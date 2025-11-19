@@ -284,8 +284,7 @@ const Index = () => {
                 <div className="flex justify-center mb-4">
                   <Icon name="Shield" size={64} className="text-primary" />
                 </div>
-                <h3 className="text-3xl font-bold text-primary mb-2">DypInPvp
-  Создатель китов</h3>
+                <h3 className="text-3xl font-bold text-primary mb-2">MrAsasin</h3>
                 <Badge className="text-lg bg-primary/20 text-primary border-2 border-primary">
                   Главный Администратор
                 </Badge>

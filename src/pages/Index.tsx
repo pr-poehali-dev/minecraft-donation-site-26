@@ -290,9 +290,9 @@ const Index = () => {
         )}
       </div>
 
-      <footer className="bg-card border-t border-border py-8 mt-20">
+      <footer className="border-t border-border py-8 mt-20 bg-[#000000]">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-muted-foreground">TheMiddleAgesCraft.aternos.me:58588</p>
+          <p className="text-[#ff0000]">TheMiddleAgesCraft.aternos.me:58588</p>
         </div>
       </footer>
 

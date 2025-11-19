@@ -177,7 +177,7 @@ const Index = () => {
           <div className="animate-fade-in">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-primary mb-4">Донат-привилегии</h2>
-              <p className="text-muted-foreground">Поддержи сервер и получи уникальные возможности</p>
+              <p className="text-muted-foreground">Поддержи сервер и получи плюшки</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

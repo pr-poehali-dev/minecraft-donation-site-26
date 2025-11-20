@@ -136,7 +136,7 @@ const Index = () => {
           <p className="text-xl text-gray-300 mb-8">Добро пожаловать в средневековый мир приключений</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="bg-card/80 backdrop-blur-sm px-6 py-3 rounded-lg border-2 border-primary">
+            <div className="backdrop-blur-sm px-6 py-3 rounded-lg border-2 border-primary bg-[#13274ecc]">
               <code className="text-primary font-mono text-lg">TheMiddleAgesCraft.aternos.me:58588</code>
             </div>
             <Button onClick={copyIP} size="lg" className="gap-2">

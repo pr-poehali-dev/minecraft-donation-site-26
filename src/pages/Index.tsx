@@ -186,7 +186,7 @@ const Index = () => {
                   key={donate.name}
                   className={`bg-gradient-to-br ${donate.color} border-2 border-border hover:border-primary transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden group`}
                 >
-                  <div className="p-6">
+                  <div className="p-6 bg-[#ff0000]">
                     <div className="flex justify-between items-start mb-4">
                       <h3 className="text-2xl font-bold text-white">{donate.name}</h3>
                       <Badge variant="secondary" className="text-lg font-bold bg-primary text-primary-foreground">

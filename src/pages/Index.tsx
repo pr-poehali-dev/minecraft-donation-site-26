@@ -298,9 +298,7 @@ const Index = () => {
 
       <footer className="border-t border-border py-8 mt-20 bg-[#3e0000]">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            © 2024 The Middle Ages Craft. Все права защищены.
-          </p>
+          <p className="text-muted-foreground"></p>
         </div>
       </footer>
 

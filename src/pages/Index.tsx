@@ -147,7 +147,7 @@ const Index = () => {
         </div>
       </div>
 
-      <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
+      <nav className="sticky top-0 z-50 backdrop-blur-sm border-b border-border bg-[#350000f2]">
         <div className="max-w-6xl mx-auto px-4 bg-[#2f0000]">
           <div className="flex justify-center gap-1 py-2">
             <Button

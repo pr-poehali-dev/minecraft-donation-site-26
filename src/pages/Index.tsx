@@ -130,10 +130,8 @@ const Index = () => {
               className="w-24 h-24 object-contain"
             />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4">
-            The Middle Ages Craft
-          </h1>
-          <p className="text-xl text-gray-300 mb-8">Добро пожаловать в средневековый мир приключений</p>
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4">FandsWorld</h1>
+          <p className="text-xl text-gray-300 mb-8">Добро пожаловать!</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div className="backdrop-blur-sm px-6 py-3 rounded-lg border-2 border-primary bg-[#002f8ccc]">

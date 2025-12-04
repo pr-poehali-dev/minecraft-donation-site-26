@@ -135,7 +135,7 @@ const Index = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div className="backdrop-blur-sm px-6 py-3 rounded-lg border-2 border-primary bg-[#002f8ccc]">
-              <code className="text-primary font-mono text-lg">TheMiddleAgesCraft.aternos.me:58588</code>
+              <code className="text-primary font-mono text-lg">TheMiddleAgesCraft</code>
             </div>
             <Button onClick={copyIP} size="lg" className="gap-2">
               <Icon name="Copy" size={20} />

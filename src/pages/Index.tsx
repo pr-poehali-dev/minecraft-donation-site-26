@@ -127,7 +127,7 @@ const Index = () => {
             <img 
               src="https://cdn.poehali.dev/projects/f557f7d6-5bf2-4632-bb1e-597b58294cf1/files/9f11c1a7-fd26-453e-b2b8-ec8cb840cf8f.jpg" 
               alt="Герб сервера"
-              className="w-24 h-24 object-contain"
+              className=""
             />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4">FandsWorld</h1>

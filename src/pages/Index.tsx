@@ -123,14 +123,16 @@ const Index = () => {
         }}
       >
         <div className="max-w-6xl mx-auto text-center">
-          <div className="">
+          <div className="flex justify-center mb-6">
             <img 
               src="https://cdn.poehali.dev/projects/f557f7d6-5bf2-4632-bb1e-597b58294cf1/files/9f11c1a7-fd26-453e-b2b8-ec8cb840cf8f.jpg" 
               alt="Герб сервера"
               className="w-24 h-24 object-contain"
             />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4">FandsWorld</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4">
+            The Middle Ages Craft
+          </h1>
           <p className="text-xl text-gray-300 mb-8">Добро пожаловать в средневековый мир приключений</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
